@@ -12,12 +12,12 @@ var branchCollection = [
 ];
 var posCollection = [
     { _id: '5c5d86fcd5c001080f576518', name: 'POS 1' },
-    { _id: '5c5d86fcd5c001080f576519', name: 'POS 2' }
+    { _id: '5c5d86fcd5c001080f576519', name: 'POS 2' },
 ];
 
 const mapToObjectId = array => array.map(id => ObjectID(id));
 
-const getReducer = filter => (accumulator, report) => {
+const getReducer = (filter) => (accumulator, report) => {
     if (accumulator.indexOf(report[filter]) === -1) {
         accumulator.push(report[filter]);
     }
@@ -25,7 +25,6 @@ const getReducer = filter => (accumulator, report) => {
 };
 
 function findReports() {
-
     var existingReports = reportsRepository.getReports();
 
     var results = {
